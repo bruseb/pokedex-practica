@@ -74,8 +74,7 @@ if (isset($_GET['search'])) {
                         <input type="text"
                                name="search"
                                class="form-control border-primary"
-                               placeholder="Buscar Pokémon por nombre..."
-                               value="<?php /* ACÁ PODÉS IMPRIMIR LA BÚSQUEDA ANTERIOR SI EXISTE */ ?>">
+                               placeholder="Buscar Pokémon por nombre...">
                         <button class="btn btn-primary px-4" type="submit">Buscar</button>
                     </div>
                 </div>
