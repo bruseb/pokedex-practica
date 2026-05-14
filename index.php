@@ -10,6 +10,9 @@ $iconosTipos = [
         'psiquico' => 'Psychic.ico',
         'siniestro' => 'Ghost.ico',
         'dragon' => 'Dragon.ico',
+        'veneno' => 'Poison.ico',
+        'hielo' => 'Ice.ico',
+
 ];
 
 if (isset($_GET['search'])) {
@@ -71,8 +74,19 @@ include_once 'header.php'
                    </div>";
             unset($_SESSION['error']);
         }
-        ?>
 
+        if (isset($_SESSION['mensaje'])) {
+            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>" . $_SESSION ['mensaje'] . "</div>";
+            unset($_SESSION['mensaje']);
+        }
+
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) : ?>
+            <div class="d-flex justify-content-end mb-4">
+                <a href="alta.php" class="btn btn-success fw-bold px-4 shadow-sm">
+                    + Nuevo Pokémon
+                </a>
+            </div>
+        <?php endif; ?>
 
         <div class="row">
 
