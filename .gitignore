@@ -1,4 +1,3 @@
-db.php
 uploads/*
 !uploads/.gitkeep
 .idea/
