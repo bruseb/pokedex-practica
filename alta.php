@@ -13,8 +13,6 @@ if (isset($_POST['submit_alta'])) {
     $nombre = $_POST['nombre'];
     $tipo = $_POST['tipo'];
     $descripcion = $_POST['descripcion'];
-
-    // Nuevos campos
     $altura_m = $_POST['altura_m'];
     $peso_kg = $_POST['peso_kg'];
     $habitat = $_POST['habitat'];
@@ -45,7 +43,6 @@ if (isset($_POST['submit_alta'])) {
 
         $carpeta_destino = 'uploads/';
 
-        // Corregido a is_dir para verificar si existe la carpeta física
         if (!is_dir($carpeta_destino)) {
             mkdir($carpeta_destino, 0777, true);
         }
@@ -55,10 +52,8 @@ if (isset($_POST['submit_alta'])) {
 
         if (move_uploaded_file($fileTmpPath, $ruta_destino)) {
 
-            // 2. Consulta actualizada con las 10 columnas
             $statement = $conexion->prepare("INSERT INTO pokemons(numero_id, nombre, tipo, descripcion, imagen_ruta, altura_m, peso_kg, habitat, color, habilidad) VALUES(?,?,?,?,?,?,?,?,?,?)");
 
-            // 3. bind_param actualizado (i = integer, s = string, d = double/decimal)
             $statement->bind_param("issssddsss", $numero_id, $nombre, $tipo, $descripcion, $ruta_destino, $altura_m, $peso_kg, $habitat, $color, $habilidad);
             $statement->execute();
 
