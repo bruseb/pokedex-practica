@@ -39,19 +39,9 @@ $iconosTipos = [
         'veneno' => 'Poison.ico',
         'hielo' => 'Ice.ico',
 ];
+
+include_once 'header.php';
 ?>
-
-    <!doctype html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalle del Pokémon</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body class="bg-light">
-
     <main class="container mt-5">
 
 
@@ -122,7 +112,7 @@ $iconosTipos = [
                         <div class="mb-4 mt-4">
                             <h5 class="text-muted mb-3">Altura</h5>
                             <p class="card-text fs-5">
-                                <?php echo htmlspecialchars($pokemon['altura_m']) . " CM" ?>
+                                <?php echo htmlspecialchars($pokemon['altura_m']) . " M" ?>
                             </p>
                         </div>
 
@@ -139,10 +129,8 @@ $iconosTipos = [
 
     </main>
 
-    </body>
-    </html>
-
 <?php
 $statement->close();
 $conexion->close();
+include_once 'footer.php';
 ?>
