@@ -36,6 +36,8 @@ $iconosTipos = [
         'psiquico' => 'Psychic.ico',
         'siniestro' => 'Ghost.ico',
         'dragon' => 'Dragon.ico',
+        'veneno' => 'Poison.ico',
+        'hielo' => 'Ice.ico',
 ];
 ?>
 

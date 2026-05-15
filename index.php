@@ -114,6 +114,15 @@ include_once 'header.php'
                             <a href="detalle.php?id=<?php echo $pokemon['id']; ?>" class="btn btn-primary mt-3 w-100">Ver
                                 detalle</a>
 
+                            <?php
+                            if(isset($_SESSION['admin']) && $_SESSION['admin'] === true) :?>
+
+                                <a href="baja.php?id=<?php echo $pokemon['id'];?>" class='btn btn-danger w-100 mt-2' onclick="return confirm('¿Estás seguro de eliminar este Pokémon?');">Eliminar</a>
+
+                            <?php endif; ?>
+
+
+
                         </div>
                     </div>
 
